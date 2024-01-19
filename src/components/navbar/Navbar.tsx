@@ -16,7 +16,7 @@ const Navbar = () => {
         <ul className="flex flex-row justify-center gap-10">
           <li className="text-slate-700 hover:text-pink-600 ">
             {' '}
-            <Link href="/home"> About</Link>
+            <Link href="/"> About</Link>
           </li>
           <li className="text-slate-700 hover:text-pink-600">
             {' '}
@@ -24,7 +24,7 @@ const Navbar = () => {
           </li>
           <li className="text-slate-700 hover:text-pink-600">
             {' '}
-            <Link href="/home">Kursus</Link>
+            <Link href="/">Kursus</Link>
           </li>
         </ul>
       </div>
