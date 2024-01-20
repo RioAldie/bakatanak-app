@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Main = () => {
   return (
@@ -42,9 +43,11 @@ const Main = () => {
             mendapatkan hasil yang lebih pasti bisa melakukan
             konsultasi langsung dengan pakar
           </p>
-          <button className="text-white mt-3 w-32 h-11 bg-pink-600 transition-all duration-300 hover:text-white hover:bg-pink-800 border border-solid border-pink-700  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-2 text-center">
-            Mulai
-          </button>
+          <Link href={'consult'}>
+            <button className="text-white mt-3 w-32 h-11 bg-pink-600 transition-all duration-300 hover:text-white hover:bg-pink-800 border border-solid border-pink-700  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-2 text-center">
+              Mulai
+            </button>
+          </Link>
         </div>
       </div>
     </div>
