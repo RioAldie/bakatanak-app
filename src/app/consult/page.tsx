@@ -1,9 +1,10 @@
 'use client';
 import QuestRadio from '@/components/consultItem/questRadio';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 
-const Consult = () => {
+const ConsultPage = () => {
   const [check, setCheck] = useState(false);
   return (
     <div className="w-full min-h-screen flex items-center flex-col ">
@@ -64,9 +65,11 @@ const Consult = () => {
             <QuestRadio name={'Pasti Tidak'} value={0} id="cf-2" />
           </div>
           <div className="w-full flex  items-center justify-center">
-            <button className="text-white mt-3 w-32 h-11 bg-pink-600 transition-all duration-300 hover:text-white hover:bg-pink-800 border border-solid border-pink-700  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-2 text-center">
-              Next
-            </button>
+            <Link href={'/result'}>
+              <button className="text-white mt-3 w-32 h-11 bg-pink-600 transition-all duration-300 hover:text-white hover:bg-pink-800 border border-solid border-pink-700  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-2 text-center">
+                Next
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -74,4 +77,4 @@ const Consult = () => {
   );
 };
 
-export default Consult;
+export default ConsultPage;
