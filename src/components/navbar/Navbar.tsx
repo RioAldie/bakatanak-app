@@ -13,7 +13,7 @@ const Navbar = () => {
         />
       </div>
       <div>
-        <ul className="flex flex-row justify-center gap-10">
+        <ul className="flex flex-row justify-center gap-10 font-medium">
           <li className="text-slate-700 hover:text-pink-600 ">
             {' '}
             <Link href="/"> About</Link>
