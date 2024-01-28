@@ -11,6 +11,11 @@ interface QuestionInterface {
   quiz: String;
   code: String;
 }
+interface indicatorType {
+  C01: number;
+  C02: number;
+  C03: number;
+}
 const ConsultPage = () => {
   const [quest, setQuest] = useState<number>(0);
   const [active, setActive] = useState<QuestionInterface>({
@@ -18,13 +23,13 @@ const ConsultPage = () => {
     quiz: '',
     code: '',
   });
+
   const dataQuest = question;
   const hadleQuestionActive = () => {
     setActive(dataQuest[quest]);
   };
 
   const handleNextQuest = () => {
-    console.log(quest);
     setQuest((prev) => (prev += 1));
   };
 
