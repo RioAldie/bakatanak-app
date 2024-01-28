@@ -36,56 +36,103 @@ const Question = (props: QuestionInterface) => {
       code: 'C05',
       value: 0,
     },
+    {
+      code: 'C06',
+      value: 0,
+    },
+    {
+      code: 'C07',
+      value: 0,
+    },
+    {
+      code: 'C08',
+      value: 0,
+    },
+    {
+      code: 'C09',
+      value: 0,
+    },
+    {
+      code: 'C10',
+      value: 0,
+    },
+
+    {
+      code: 'C11',
+      value: 0,
+    },
+    {
+      code: 'C12',
+      value: 0,
+    },
+    {
+      code: 'C13',
+      value: 0,
+    },
+    {
+      code: 'C14',
+      value: 0,
+    },
+    {
+      code: 'C15',
+      value: 0,
+    },
+    {
+      code: 'C16',
+      value: 0,
+    },
+    {
+      code: 'C17',
+      value: 0,
+    },
+    {
+      code: 'C18',
+      value: 0,
+    },
+    {
+      code: 'C19',
+      value: 0,
+    },
+    {
+      code: 'C20',
+      value: 0,
+    },
   ]);
 
   const handleSetValueCfIndicator = (e: any) => {
     e.preventDefault();
 
-    for (let i = 0; i < cfIndicator.length; i++) {
-      if (cfIndicator[i].code === code) {
-        console.log('value: ', selectedValue);
-      }
-    }
+    let prevObj = cfIndicator;
+    let objIndex = cfIndicator.findIndex((obj) => obj.code === code);
 
+    prevObj[objIndex].value = selectedValue;
+
+    setCfIndicator(prevObj);
+
+    if (code === 'C20') {
+      return handleFinish();
+    }
     handleNextQuest();
   };
   let counter = 0;
   const handleNextQuest = () => {
     counter = counter + 1;
     setQuest();
+
+    console.log(cfIndicator);
+  };
+  const handleFinish = () => {
+    console.log('hasil:', cfIndicator);
   };
   return (
     <div className="flex justify-center flex-col gap-5 items-start">
       <p className="text-lg  text-pink-600 font-bold text-center ">
         Pilih diantara pilihan ini yang sesuai dengan anak anda!
       </p>
-      <p>
+      <p className="font-medium">
         {no}. {name}
       </p>
       <form action="" onSubmit={(e) => handleSetValueCfIndicator(e)}>
-        {/* <div className="flex flex-col gap-4 justify-center p-5">
-          <QuestRadio name={'Sangat pasti'} value={1} id={'cf-1'} />
-          <QuestRadio name={'Hampir Pasti'} value={0.8} id="cf-2" />
-          <QuestRadio
-            name={'Kemungkinan Besar'}
-            value={0.6}
-            id="cf-2"
-          />
-          <QuestRadio name={'Mungkin'} value={0.5} id="cf-2" />
-          <QuestRadio name={'Tidak Tahu'} value={0.4} id="cf-2" />
-          <QuestRadio name={'Mungkin Tidak'} value={0.3} id="cf-2" />
-          <QuestRadio
-            name={'Kemungkinan Besar Tidak'}
-            value={0.2}
-            id="cf-2"
-          />
-          <QuestRadio
-            name={'Hampir Pasti Tidak'}
-            value={0.1}
-            id="cf-2"
-          />
-          <QuestRadio name={'Pasti Tidak'} value={0} id="cf-2" />
-        </div> */}
         <RadioButtons
           selectedValue={selectedValue}
           setSelectedValue={setSelectedValue}

@@ -22,9 +22,6 @@ const RadioButtons = (props: QuestTypes) => {
 
   return (
     <RadioGroup value={selectedValue} onChange={setSelectedValue}>
-      <RadioGroup.Label className="font-medium mb-5">
-        Berdasarkan pengmatan anda:
-      </RadioGroup.Label>
       <div className="space-y-2 mt-4">
         {options.map((option) => (
           <RadioGroup.Option key={option.value} value={option.value}>
