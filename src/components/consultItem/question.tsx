@@ -3,6 +3,9 @@ import QuestRadio from './questRadio';
 import question from '../../data/question';
 import { useState } from 'react';
 import RadioButtons from './radioButton';
+import Link from 'next/link';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '@/redux/store';
 
 interface QuestionInterface {
   no: number;
@@ -14,6 +17,7 @@ interface QuestionInterface {
 const Question = (props: QuestionInterface) => {
   const { name, code, no, setQuest } = props;
   const [value, setValue] = useState(0);
+  const dispatch = useDispatch();
   const [selectedValue, setSelectedValue] = useState(0);
   const [cfIndicator, setCfIndicator] = useState([
     {
@@ -98,6 +102,9 @@ const Question = (props: QuestionInterface) => {
       value: 0,
     },
   ]);
+  const consult = useSelector(
+    (state: RootState) => state.consult.value
+  );
 
   const handleSetValueCfIndicator = (e: any) => {
     e.preventDefault();
@@ -119,7 +126,7 @@ const Question = (props: QuestionInterface) => {
     counter = counter + 1;
     setQuest();
 
-    console.log(cfIndicator);
+    console.log('tes', consult);
   };
   const handleFinish = () => {
     console.log('hasil:', cfIndicator);
@@ -143,9 +150,11 @@ const Question = (props: QuestionInterface) => {
               Next
             </button>
           ) : (
-            <button className="text-white mt-3 w-32 h-11 bg-pink-600 transition-all duration-300 hover:text-white hover:bg-pink-800 border border-solid border-pink-700  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-2 text-center">
-              Selesai
-            </button>
+            <Link href={'/result'}>
+              <button className="text-white mt-3 w-32 h-11 bg-pink-600 transition-all duration-300 hover:text-white hover:bg-pink-800 border border-solid border-pink-700  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-2 text-center">
+                Selesai
+              </button>
+            </Link>
           )}{' '}
         </div>
       </form>

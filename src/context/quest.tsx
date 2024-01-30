@@ -1,26 +1,41 @@
-import { ReactNode, createContext, useState } from 'react';
+'use client';
+import {
+  ReactNode,
+  createContext,
+  useContext,
+  useState,
+} from 'react';
 
-interface questInterface {
-  index: Number;
-}
 interface childrenProps {
   children: ReactNode;
 }
 
 const defaultValue = {
-  active: 0,
-  setActive: (state: number) => {},
+  CFUser: {} || null,
 };
-
-export const QuestContext = createContext(defaultValue);
+interface UserContextType {
+  CFUser: Object | null;
+  setCFUser: (user: Object | null) => void;
+}
+export const QuestContext = createContext<
+  UserContextType | undefined
+>(undefined);
 
 const QuestContextProvider = ({ children }: childrenProps) => {
-  const [active, setActive] = useState<number>(0);
+  const [CFUser, setCFUser] = useState<Object | null>(null);
   return (
-    <QuestContext.Provider value={{ active, setActive }}>
+    <QuestContext.Provider value={{ CFUser, setCFUser }}>
       {children}
     </QuestContext.Provider>
   );
 };
+export const useCFuser = () => {
+  const context = useContext(QuestContext);
 
+  if (!context) {
+    throw new Error('useUser must be used within a UserProvider');
+  }
+
+  return context;
+};
 export default QuestContextProvider;

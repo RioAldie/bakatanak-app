@@ -1,3 +1,4 @@
+import { useConsult } from '@/context/result';
 import Image from 'next/image';
 
 const ResultPage = () => {
