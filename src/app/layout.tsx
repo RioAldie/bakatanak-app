@@ -2,6 +2,10 @@ import type { Metadata } from 'next';
 import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/navbar/Navbar';
+import { ConsultProvider } from '@/context/result';
+import { Providers } from './provider';
+import store from '../redux/store';
+import { Provider } from 'react-redux';
 
 const inter = Inter({ subsets: ['latin'] });
 const poppins = Poppins({
@@ -23,7 +27,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
         <Navbar />
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

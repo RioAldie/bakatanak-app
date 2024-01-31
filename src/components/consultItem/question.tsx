@@ -3,6 +3,11 @@ import QuestRadio from './questRadio';
 import question from '../../data/question';
 import { useState } from 'react';
 import RadioButtons from './radioButton';
+import Link from 'next/link';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '@/redux/store';
+import { set } from '@/redux/slice';
+import { useRouter } from 'next/navigation';
 
 interface QuestionInterface {
   no: number;
@@ -14,6 +19,7 @@ interface QuestionInterface {
 const Question = (props: QuestionInterface) => {
   const { name, code, no, setQuest } = props;
   const [value, setValue] = useState(0);
+  const dispatch = useDispatch();
   const [selectedValue, setSelectedValue] = useState(0);
   const [cfIndicator, setCfIndicator] = useState([
     {
@@ -98,6 +104,10 @@ const Question = (props: QuestionInterface) => {
       value: 0,
     },
   ]);
+  const router = useRouter();
+  const consult = useSelector(
+    (state: RootState) => state.consult.value
+  );
 
   const handleSetValueCfIndicator = (e: any) => {
     e.preventDefault();
@@ -118,11 +128,11 @@ const Question = (props: QuestionInterface) => {
   const handleNextQuest = () => {
     counter = counter + 1;
     setQuest();
-
-    console.log(cfIndicator);
   };
   const handleFinish = () => {
-    console.log('hasil:', cfIndicator);
+    dispatch(set(cfIndicator));
+
+    return router.push('/result');
   };
   return (
     <div className="flex justify-center flex-col gap-5 items-start">

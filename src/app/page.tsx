@@ -1,3 +1,5 @@
+import QuestContextProvider from '@/context/quest';
+import { UserProvider } from '@/context/tes';
 import Image from 'next/image';
 
 export default function Home() {
