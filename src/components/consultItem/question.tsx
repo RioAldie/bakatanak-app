@@ -6,6 +6,8 @@ import RadioButtons from './radioButton';
 import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
+import { set } from '@/redux/slice';
+import { useRouter } from 'next/navigation';
 
 interface QuestionInterface {
   no: number;
@@ -102,6 +104,7 @@ const Question = (props: QuestionInterface) => {
       value: 0,
     },
   ]);
+  const router = useRouter();
   const consult = useSelector(
     (state: RootState) => state.consult.value
   );
@@ -125,11 +128,11 @@ const Question = (props: QuestionInterface) => {
   const handleNextQuest = () => {
     counter = counter + 1;
     setQuest();
-
-    console.log('tes', consult);
   };
   const handleFinish = () => {
-    console.log('hasil:', cfIndicator);
+    dispatch(set(cfIndicator));
+
+    return router.push('/result');
   };
   return (
     <div className="flex justify-center flex-col gap-5 items-start">
@@ -150,11 +153,9 @@ const Question = (props: QuestionInterface) => {
               Next
             </button>
           ) : (
-            <Link href={'/result'}>
-              <button className="text-white mt-3 w-32 h-11 bg-pink-600 transition-all duration-300 hover:text-white hover:bg-pink-800 border border-solid border-pink-700  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-2 text-center">
-                Selesai
-              </button>
-            </Link>
+            <button className="text-white mt-3 w-32 h-11 bg-pink-600 transition-all duration-300 hover:text-white hover:bg-pink-800 border border-solid border-pink-700  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-2 text-center">
+              Selesai
+            </button>
           )}{' '}
         </div>
       </form>
