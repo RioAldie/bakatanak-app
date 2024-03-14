@@ -18,7 +18,7 @@ const ResultDisplay = (params: any) => {
           {formattedPercentage}
         </p>
       </div>
-      <button className="text-white mt-3 w-full h-11 bg-pink-600 transition-all duration-300 hover:text-white hover:bg-pink-800 border border-solid border-pink-700  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-2 text-center">
+      <button className="text-white mt-3 md:w-full w-56 h-11 flex items-center justify-center bg-pink-600 transition-all duration-300 hover:text-white hover:bg-pink-800 border border-solid border-pink-700  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-2 text-center">
         Lihat Rekomendasi Kursus
       </button>
     </div>

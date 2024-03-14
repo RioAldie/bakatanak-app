@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 function Footer() {
   return (
-    <footer className="w-full flex flex-col bg-navy justify-between  items-center bg-pink-950 ">
+    <footer className="w-full flex flex-col bg-navy justify-between  items-center bg-pink-950 mt-14 ">
       <div className="flex h-full w-full flex-wrap md:flex-col flex-row items-center justify-between py-[5rem] md:py-12 px-[6.25%]">
         <img src="/icons/nutrify-logo-white.svg" alt="" />
         <div className="text-white flex flex-row  gap-4 items-center justify-center md:mb-5 md:mt-4 ">

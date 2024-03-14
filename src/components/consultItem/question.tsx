@@ -142,12 +142,15 @@ const Question = (props: QuestionInterface) => {
       <p className="font-medium">
         {no}. {name}
       </p>
-      <form action="" onSubmit={(e) => handleSetValueCfIndicator(e)}>
+      <form
+        action=""
+        className="w-full"
+        onSubmit={(e) => handleSetValueCfIndicator(e)}>
         <RadioButtons
           selectedValue={selectedValue}
           setSelectedValue={setSelectedValue}
         />
-        <div className="w-full flex  items-center justify-center">
+        <div className="w-full flex mt-7 border-lime-100 border  items-center justify-center">
           {no !== 20 ? (
             <button className="text-white mt-3 w-32 h-11 bg-pink-600 transition-all duration-300 hover:text-white hover:bg-pink-800 border border-solid border-pink-700  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-2 text-center">
               Next

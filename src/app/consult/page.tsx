@@ -58,7 +58,7 @@ const ConsultPage = () => {
           height={198}
         />
       </div>
-      <div className="w-[700px] h-[600px] p-14 z-30  backdrop-blur-md bg-white/30">
+      <div className="md:w-[700px] w-[400px] h-[600px] p-14 z-20  backdrop-blur-md bg-white/30">
         <Question
           no={active.no}
           name={active.quiz}
