@@ -1,12 +1,13 @@
 import QuestContextProvider from '@/context/quest';
 import { UserProvider } from '@/context/tes';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-row items-center justify-between px-40">
-      <div className="w-[500px] flex flex-col justify-start gap-5">
-        <h1 className="font-bold text-5xl text-black text-poppins">
+    <main className="flex min-h-screen h-max md:flex-row flex-col items-center md:justify-between justify-center md:px-40 px-2 gap-11 py-8">
+      <div className="w-[400px] flex flex-col md:justify-start justify-center md:items-start items-center gap-5 md:text-left text-center">
+        <h1 className="font-bold md:text-5xl text-3xl text-black text-poppins">
           Temukan Minat dan Bakat, Untuk{' '}
           <span className="text-pink-600">Masa Depan!</span>{' '}
         </h1>
@@ -15,9 +16,11 @@ export default function Home() {
           bagi anak, agar potensi bakat mereka dapat dikembangkan
           dengan tepat.
         </p>
-        <button className="w-40 h-10 bg-pink-600 text-white rounded">
+        <Link
+          href={'/consult'}
+          className="w-40 h-10 bg-pink-600 text-white rounded flex items-center justify-center">
           Konsultasi
-        </button>
+        </Link>
       </div>
       <div>
         <Image

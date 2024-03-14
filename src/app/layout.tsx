@@ -6,6 +6,7 @@ import { ConsultProvider } from '@/context/result';
 import { Providers } from './provider';
 import store from '../redux/store';
 import { Provider } from 'react-redux';
+import Footer from '@/components/footer/footer';
 
 const inter = Inter({ subsets: ['latin'] });
 const poppins = Poppins({
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body className={poppins.className}>
         <Navbar />
         <Providers>{children}</Providers>
+        <Footer />
       </body>
     </html>
   );
