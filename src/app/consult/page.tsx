@@ -38,7 +38,7 @@ const ConsultPage = () => {
   }, [quest]);
   return (
     <div className="w-full min-h-screen flex items-center flex-col ">
-      <p className="font-bold text-black mt-20 text-center text-2xl w-[400px]">
+      <p className="font-bold text-black mt-20 text-center text-2xl w-[360px]">
         Konsultasi <span className="text-pink-600">Minat Bakat</span>{' '}
       </p>
 
@@ -58,7 +58,7 @@ const ConsultPage = () => {
           height={198}
         />
       </div>
-      <div className="md:w-[700px] w-[400px] h-[600px] p-14 z-20  backdrop-blur-md bg-white/30">
+      <div className="md:w-[700px] w-[360px] h-[600px] p-14 z-20  backdrop-blur-md bg-white/30">
         <Question
           no={active.no}
           name={active.quiz}

@@ -1,21 +1,5 @@
-'use client';
-
 import CourseItem from './courseItem';
-
-const getRecomendationCourse = async () => {
-  const response = await fetch(
-    'https://bakatanak-server.vercel.app/course',
-    {
-      method: 'GET',
-    }
-  );
-
-  if (!response.ok) {
-    throw new Error('something is wrong!');
-  }
-
-  return response.json();
-};
+import { getRecomendationCourse } from '@/lib/course';
 
 type courseFormat = {
   _id: String;
@@ -23,13 +7,11 @@ type courseFormat = {
   image: String;
 };
 const CourseDisplay = async () => {
-  const result =
-    (await getRecomendationCourse().then((res) => res.data)) || [];
+  const courses: Array<courseFormat> = await getRecomendationCourse();
 
-  console.log('courses =>', result);
   return (
-    <div className="flex flex-row flex-wrap gap-3  justify-center w-4/5 mt-28">
-      {result.map((course: courseFormat) => {
+    <div className="flex flex-row flex-wrap gap-3  justify-center w-4/5 md:mt-28 mt-3">
+      {courses.map((course: courseFormat) => {
         return (
           <CourseItem
             key={course._id}
