@@ -4,7 +4,7 @@ import Image from 'next/image';
 const ResultPage = () => {
   return (
     <div className="w-full min-h-screen flex items-center flex-col ">
-      <p className="font-bold text-black mt-20 text-center text-2xl w-[400px]">
+      <p className="font-bold text-black mt-20 text-center text-2xl w-[360px]">
         Konsultasi <span className="text-pink-600">Minat Bakat</span>
       </p>
       <div className="z-10 absolute top-56 left-80">

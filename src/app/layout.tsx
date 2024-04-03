@@ -7,6 +7,9 @@ import { Providers } from './provider';
 import store from '../redux/store';
 import { Provider } from 'react-redux';
 import Footer from '@/components/footer/footer';
+import { Suspense } from 'react';
+import Loading from '@/components/loading';
+import AppBar from '@/components/layout/appbar';
 
 const inter = Inter({ subsets: ['latin'] });
 const poppins = Poppins({
@@ -28,7 +31,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
         <Navbar />
-        <Providers>{children}</Providers>
+        <Suspense fallback={<Loading />}>
+          <Providers>{children}</Providers>
+        </Suspense>
+
         <Footer />
       </body>
     </html>

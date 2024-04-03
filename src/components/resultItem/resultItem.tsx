@@ -58,7 +58,7 @@ const ResultItem = async () => {
   );
 
   return (
-    <div className="md:w-[700px] w-[400px] h-[560px] p-14 z-30  backdrop-blur-md bg-white/30">
+    <div className="md:w-[700px] w-[360px] h-[560px] p-14 z-30  backdrop-blur-md bg-white/30">
       <Suspense fallback={<div>Loading...</div>}>
         <ResultDisplay
           talent={result?.talent}
