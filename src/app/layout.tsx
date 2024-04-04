@@ -9,7 +9,6 @@ import { Provider } from 'react-redux';
 import Footer from '@/components/footer/footer';
 import { Suspense } from 'react';
 import Loading from '@/components/loading';
-import AppBar from '@/components/layout/appbar';
 
 const inter = Inter({ subsets: ['latin'] });
 const poppins = Poppins({
