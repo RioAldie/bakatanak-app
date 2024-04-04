@@ -1,5 +1,4 @@
 'use client';
-
 import React, { Suspense } from 'react';
 import ResultDisplay from './resultDisplay';
 import { useSelector } from 'react-redux';
