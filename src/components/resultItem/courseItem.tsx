@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 interface CourseProps {
@@ -9,9 +10,11 @@ const CourseItem = (props: CourseProps) => {
   const { name, image, id } = props;
   return (
     <div className="p-1 w-64 border border-gray-300 rounded-3xl">
-      <img
+      <Image
         src={`${image}`}
         alt="img"
+        width={250}
+        height={250}
         className="w-64 h-44 rounded-3xl"
       />
       <p className="text-sm font-bold ml-2 my-4 text-pink-600">
