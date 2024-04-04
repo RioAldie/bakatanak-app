@@ -44,7 +44,7 @@ export const ConsultProvider: React.FC<{ children: ReactNode }> = ({
     handleSetData,
   };
   return (
-    <ConsultContext.Provider value={value}>
+    <ConsultContext.Provider value={value as ConsultTypes}>
       {children}
     </ConsultContext.Provider>
   );
