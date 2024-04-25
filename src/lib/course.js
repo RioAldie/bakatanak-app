@@ -3,7 +3,7 @@ export const getRecomendationCourse = async () => {
     const response = await fetch(
       'https://bakatanak-server.vercel.app/course',
       {
-        method: 'GET',
+        caches: 'no-store',
       }
     );
 
