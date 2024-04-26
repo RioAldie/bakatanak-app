@@ -62,6 +62,7 @@ const ResultItem = async () => {
         <ResultDisplay
           talent={result?.talent}
           prob={parseFloat(result?.prob)}
+          id={result.code}
         />
       </Suspense>
     </div>
