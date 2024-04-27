@@ -20,9 +20,12 @@ const ResultDisplay = (params: any) => {
           {formattedPercentage}
         </p>
       </div>
-      <Link href={`/result/${id}`}>
+      <Link href={`/save`}>
         <button className="text-white mt-3 md:w-full w-56 h-11 flex items-center justify-center bg-pink-600 transition-all duration-300 hover:text-white hover:bg-pink-800 border border-solid border-pink-700  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-2 text-center">
           Lihat Rekomendasi Kursus
+        </button>
+        <button className="text-pink-800 mt-3 md:w-full w-56 h-11 flex items-center justify-center bg-white transition-all duration-300 hover:text-white hover:bg-pink-800 border border-solid border-pink-700  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-2 text-center">
+          Simpan Hasil Konsultasi
         </button>
       </Link>
     </div>
