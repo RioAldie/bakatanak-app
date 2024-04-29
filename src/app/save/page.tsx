@@ -1,5 +1,6 @@
 'use client';
 
+import { postResultConsult } from '@/lib/result';
 import { RootState } from '@/redux/store';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
@@ -33,13 +34,15 @@ const SavePage = () => {
     }
   };
 
-  const handleSave = (e: any) => {
+  const handleSave = async (e: any) => {
     e.preventDefault();
 
     const newRes = { ...child, ...result };
     console.log('Recent child: ', child);
     console.log('Result: ', result);
     console.log('New Result: ', newRes);
+
+    await postResultConsult({ ...child, ...result });
   };
   return (
     <div className="w-full min-h-screen flex items-center flex-col mt-28">
