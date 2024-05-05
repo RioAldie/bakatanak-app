@@ -17,7 +17,7 @@ export default function Home() {
             dengan tepat.
           </p>
           <Link
-            href={'/consult'}
+            href={'/warning'}
             className="w-40 h-10 bg-pink-600 text-white rounded flex items-center justify-center">
             Konsultasi
           </Link>

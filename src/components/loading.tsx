@@ -1,6 +1,9 @@
 const Loading = () => {
-  console.log('this is loading');
-  return <div>....Loading</div>;
+  return (
+    <div className="w-full min-h-screen flex items-center flex-col mt-28">
+      ....Loading
+    </div>
+  );
 };
 
 export default Loading;

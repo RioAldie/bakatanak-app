@@ -1,6 +1,7 @@
 import React, { Key } from 'react';
-import CourseItem from './courseItem';
-import { getRecomendationCourseByTalent } from '@/lib/course';
+
+import { getRecomendationCourse } from '@/lib/course';
+import CourseItem from '../resultItem/courseItem';
 
 type courseFormat = {
   key: String;
@@ -8,12 +9,9 @@ type courseFormat = {
   name: String;
   image: String;
 };
-type idProps = {
-  id: String;
-};
-const CourseDisplay: React.FC<idProps> = async ({ id }) => {
-  const courses: Array<courseFormat> =
-    await getRecomendationCourseByTalent(id);
+
+const CourseList = async () => {
+  const courses: Array<courseFormat> = await getRecomendationCourse();
 
   return (
     <div className="flex flex-row flex-wrap gap-3  justify-center w-4/5 md:mt-28 mt-3">
@@ -31,4 +29,4 @@ const CourseDisplay: React.FC<idProps> = async ({ id }) => {
   );
 };
 
-export default CourseDisplay;
+export default CourseList;

@@ -136,7 +136,7 @@ const Question = (props: QuestionInterface) => {
   };
   return (
     <div className="flex justify-center flex-col gap-5 items-start">
-      <p className="text-lg  text-pink-600 font-bold text-center ">
+      <p className="text-xl  text-pink-600 font-bold text-center ">
         Pilih diantara pilihan ini yang sesuai dengan anak anda!
       </p>
       <p className="font-medium">
