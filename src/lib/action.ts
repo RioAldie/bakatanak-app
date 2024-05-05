@@ -12,7 +12,7 @@ export const getSession = async () => {
   if (!session.isLoggedin) {
     session.isLoggedin = defaultSession.isLoggedin;
   }
-  console.log('getSession:', session);
+
   return session;
 };
 
@@ -50,7 +50,6 @@ export const login = async (
   session.isLoggedin = true;
   session.email = user.data.email;
 
-  console.log('ses', session);
   await session.save();
 
   redirect('/warning');
@@ -60,5 +59,5 @@ export const logout = async () => {
   const session = await getSession();
 
   session.destroy();
-  redirect('/warning');
+  redirect('/');
 };
