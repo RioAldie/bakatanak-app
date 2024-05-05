@@ -4,13 +4,16 @@ import { postResultConsult } from '@/lib/result';
 import { RootState } from '@/redux/store';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-
-const SaveFrom = () => {
+interface saveFromProps {
+  userId?: string;
+}
+const SaveFrom = (props: saveFromProps) => {
   const [child, setSchild] = useState({
     name: '',
     age: 0,
     school: '',
     city: '',
+    userId: props.userId,
   });
 
   const result = useSelector(

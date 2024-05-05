@@ -12,7 +12,7 @@ export const getSession = async () => {
   if (!session.isLoggedin) {
     session.isLoggedin = defaultSession.isLoggedin;
   }
-
+  console.log('getSession:', session);
   return session;
 };
 
@@ -23,7 +23,7 @@ export const login = async (
   const session = await getSession();
   const formEmail = formData.get('email') as string;
   const formPassword = formData.get('password') as string;
-  console.log({ email: formEmail, password: formPassword });
+
   const res = await fetch(
     'https://bakatanak-server.vercel.app/auth/signin',
     {
@@ -45,11 +45,12 @@ export const login = async (
   }
   const user = await res.json();
 
-  session.userId = user.userId;
-  session.username = user.username;
+  session.userId = user.data.userId;
+  session.username = user.data.username;
   session.isLoggedin = true;
-  session.email = user.email;
+  session.email = user.data.email;
 
+  console.log('ses', session);
   await session.save();
 
   redirect('/warning');

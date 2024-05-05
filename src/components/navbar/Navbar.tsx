@@ -9,8 +9,6 @@ import AuthBox from './AuthBox';
 const Navbar = async () => {
   const session = await getSession();
 
-  console.log('session:', session);
-
   return (
     <div className="w-full  z-30 px-10  items-center flex justify-between flex-row bg-white top-0 sticky h-14 border-b-2 border-l-slate-400">
       <Link href={'/'}>

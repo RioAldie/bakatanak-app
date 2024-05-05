@@ -8,10 +8,11 @@ const SavePage = async () => {
   if (!session.isLoggedin) {
     redirect('/not-login');
   }
+
   return (
     <div className="w-full min-h-screen flex items-center flex-col mt-28">
       <div className="w-96 h-96 ">
-        <SaveFrom />
+        <SaveFrom userId={session?.userId} />
       </div>
     </div>
   );

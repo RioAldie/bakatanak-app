@@ -35,7 +35,6 @@ const ResultDisplay = (params: any) => {
               setResult({
                 talent,
                 prob,
-                userId: '65b343c1664852d14a8bba8b',
                 code: id,
               })
             )

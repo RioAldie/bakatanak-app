@@ -1,6 +1,6 @@
 export const postResultConsult = async (result: object) => {
   try {
-    console.log('resultArgs: ', result);
+    console.log('result =>', result);
     const res = await fetch(
       'https://bakatanak-server.vercel.app/consult/save',
       {
