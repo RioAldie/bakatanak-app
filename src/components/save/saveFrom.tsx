@@ -2,6 +2,7 @@
 
 import { postResultConsult } from '@/lib/result';
 import { RootState } from '@/redux/store';
+import { redirect, usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 interface saveFromProps {
@@ -15,6 +16,7 @@ const SaveFrom = (props: saveFromProps) => {
     city: '',
     userId: props.userId,
   });
+  const router = useRouter();
 
   const result = useSelector(
     (state: RootState) => state.result.value
@@ -41,11 +43,11 @@ const SaveFrom = (props: saveFromProps) => {
     e.preventDefault();
 
     const newRes = { ...child, ...result };
-    console.log('Recent child: ', child);
-    console.log('Result: ', result);
-    console.log('New Result: ', newRes);
 
-    await postResultConsult({ ...child, ...result });
+    const res = await postResultConsult({ ...child, ...result });
+    if (res) {
+      return router.push('/profile');
+    }
   };
   return (
     <form
