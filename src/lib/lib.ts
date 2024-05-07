@@ -6,6 +6,8 @@ export interface SessionData {
   email?: string;
   password?: string;
   isLoggedin?: boolean;
+  gender?: string;
+  age?: number;
 }
 
 export const sessionOption: SessionOptions = {

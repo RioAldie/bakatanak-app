@@ -35,6 +35,10 @@ const Navbar = async () => {
             {' '}
             <Link href="/course">Kursus</Link>
           </li>
+          <li className="text-slate-700 hover:text-pink-600">
+            {' '}
+            <Link href="/profile">Riwayat</Link>
+          </li>
         </ul>
       </div>
 

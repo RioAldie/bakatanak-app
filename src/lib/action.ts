@@ -49,6 +49,8 @@ export const login = async (
   session.username = user.data.username;
   session.isLoggedin = true;
   session.email = user.data.email;
+  session.gender = user.data.gender;
+  session.age = user.data.age;
 
   await session.save();
 
