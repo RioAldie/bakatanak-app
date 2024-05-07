@@ -3,7 +3,6 @@ import {
   UserCircleIcon,
   ArchiveBoxIcon,
 } from '@heroicons/react/24/solid';
-import PersonalInformation from '@/components/profile/personalInformation';
 import ListResultConsult from '@/components/profile/listResultConsult';
 import { getSession } from '@/lib/action';
 import { redirect } from 'next/navigation';
