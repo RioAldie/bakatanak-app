@@ -18,7 +18,7 @@ interface QuestionInterface {
 
 const Question = (props: QuestionInterface) => {
   const { name, code, no, setQuest } = props;
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(false);
   const dispatch = useDispatch();
   const [selectedValue, setSelectedValue] = useState(0);
   const [cfIndicator, setCfIndicator] = useState([
@@ -122,12 +122,16 @@ const Question = (props: QuestionInterface) => {
     if (code === 'C20') {
       return handleFinish();
     }
+
     handleNextQuest();
   };
   let counter = 0;
   const handleNextQuest = () => {
+    setValue(false);
+    setSelectedValue(0);
     counter = counter + 1;
     setQuest();
+    console.log('Cf =>', no, ':', cfIndicator);
   };
   const handleFinish = () => {
     dispatch(set(cfIndicator));
@@ -149,6 +153,7 @@ const Question = (props: QuestionInterface) => {
         <RadioButtons
           selectedValue={selectedValue}
           setSelectedValue={setSelectedValue}
+          isCheked={no}
         />
         <div className="w-full flex mt-7 border-lime-100 border  items-center justify-center">
           {no !== 20 ? (

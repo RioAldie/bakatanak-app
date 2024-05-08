@@ -1,7 +1,7 @@
 import React, { Key } from 'react';
 
-import { getRecomendationCourse } from '@/lib/course';
 import CourseItem from '../resultItem/courseItem';
+import { getRecomendationCourse } from '@/lib/course';
 
 type courseFormat = {
   key: String;
@@ -15,7 +15,7 @@ const CourseList = async () => {
 
   return (
     <div className="flex flex-row flex-wrap gap-3  justify-center w-4/5 md:mt-28 mt-3">
-      {courses.map((course: courseFormat, i: Number) => {
+      {courses?.map((course: courseFormat, i: Number) => {
         return (
           <CourseItem
             key={course._id as Key}
