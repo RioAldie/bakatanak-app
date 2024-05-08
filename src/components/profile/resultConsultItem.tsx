@@ -13,7 +13,7 @@ const ResultConsultItem = (props: resultConsultProps) => {
   const formattedPercentage = (prob * 100).toFixed(2) + '%';
   return (
     <div className="w-full   bg-white border border-gray-200 rounded-lg shadow ">
-      <div className="flex flex-row items-center justify-between p-3">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between p-3 gap-4">
         <div className="w-64 ">
           <h5 className="mb-1 text-xl font-medium text-gray-900 ">
             {name}

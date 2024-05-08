@@ -38,7 +38,7 @@ const LoginForm = () => {
       />
       <button
         type="submit"
-        className="bg-pink-600 rounded mt-3 h-10 w-48 text-white">
+        className="text-white mt-3  w-56 h-11 flex items-center justify-center bg-pink-600 transition-all duration-300 hover:text-white hover:bg-pink-800 border border-solid border-pink-700  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-2 text-center">
         Login
       </button>
       {state?.error && <p>{state.error}</p>}

@@ -9,7 +9,7 @@ type courseFormat = {
   image: String;
 };
 type idProps = {
-  id: String;
+  id: string;
 };
 const CourseDisplay: React.FC<idProps> = async ({ id }) => {
   const courses: Array<courseFormat> =

@@ -1,7 +1,6 @@
 import { getSession } from '@/lib/action';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
 import Menu from './menu';
 import Logout from './logout';
 import AuthBox from './AuthBox';

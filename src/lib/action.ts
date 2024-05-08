@@ -54,7 +54,7 @@ export const login = async (
 
   await session.save();
 
-  redirect('/warning');
+  redirect('/profile');
 };
 
 export const logout = async () => {

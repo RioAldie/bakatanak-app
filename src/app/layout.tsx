@@ -19,6 +19,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: 'Bakat Anak',
   description: 'Sistem Pakar Identifikasi Minat Bakat Anak',
+  icons: {
+    icon: '/icons/bakatanak-favicon.svg',
+  },
 };
 
 export default function RootLayout({

@@ -3,9 +3,12 @@ export const getRecomendationCourse = async () => {
     const response = await fetch(
       'https://bakatanak-server.vercel.app/course',
       {
-        caches: 'no-store',
+        method: 'GET',
       }
     );
+    if (response.status > 300) {
+      throw new Error('Not found');
+    }
 
     const res = await response.json();
 
@@ -14,18 +17,18 @@ export const getRecomendationCourse = async () => {
     throw new Error('something is wrong!');
   }
 };
-export const getRecomendationCourseByTalent = async (id) => {
+export const getRecomendationCourseByTalent = async (id: string) => {
   try {
     const response = await fetch(
       `https://bakatanak-server.vercel.app/course/${id}`,
       {
-        caches: 'no-store',
+        method: 'GET',
       }
     );
     const res = await response.json();
 
     return res.data;
   } catch (error) {
-    throw new Error('something is wrong!', error);
+    throw new Error('something is wrong!');
   }
 };
