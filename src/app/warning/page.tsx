@@ -11,7 +11,7 @@ const WarningPage = () => {
 
       <div className="z-10 absolute top-56 left-80">
         <Image
-          src={'/images/ellipse.png'}
+          src={'/images/ellipse2.png'}
           alt="eclipse"
           width={157}
           height={113}
