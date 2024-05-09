@@ -7,6 +7,8 @@ import ListResultConsult from '@/components/profile/listResultConsult';
 import { getSession } from '@/lib/action';
 import { redirect } from 'next/navigation';
 import { revalidatePath } from 'next/cache';
+import { Suspense } from 'react';
+import Loading from '@/components/loading';
 
 const ProfilePage = async () => {
   const session = await getSession();
@@ -37,7 +39,9 @@ const ProfilePage = async () => {
           </Link>
         </div>
       </div>
-      <ListResultConsult />
+      <Suspense fallback={<Loading />}>
+        <ListResultConsult />
+      </Suspense>
     </section>
   );
 };

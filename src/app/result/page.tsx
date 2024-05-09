@@ -1,5 +1,7 @@
+import Loading from '@/components/loading';
 import ResultItem from '@/components/resultItem/resultItem';
 import Image from 'next/image';
+import { Suspense } from 'react';
 
 const ResultPage = () => {
   return (
@@ -23,7 +25,9 @@ const ResultPage = () => {
           height={198}
         />
       </div>
-      <ResultItem />
+      <Suspense fallback={<Loading />}>
+        <ResultItem />
+      </Suspense>
     </div>
   );
 };

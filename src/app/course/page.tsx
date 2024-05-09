@@ -1,5 +1,7 @@
 import CourseList from '@/components/course/courseList';
+import Loading from '@/components/loading';
 import { revalidatePath } from 'next/cache';
+import { Suspense } from 'react';
 
 const CoursePage = () => {
   revalidatePath('/course');
@@ -11,7 +13,9 @@ const CoursePage = () => {
       <p className="text-sm mt-3 w-full text-center font-semibold text-black">
         Rekomendasi kursus untuk pengembangan Minat Bakat Anak
       </p>
-      <CourseList />
+      <Suspense fallback={<Loading />}>
+        <CourseList />
+      </Suspense>
     </div>
   );
 };
