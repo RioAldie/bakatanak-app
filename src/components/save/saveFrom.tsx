@@ -5,6 +5,7 @@ import { RootState } from '@/redux/store';
 import { redirect, usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { Toaster, toast } from 'sonner';
 interface saveFromProps {
   userId?: string;
 }
@@ -46,13 +47,16 @@ const SaveFrom = (props: saveFromProps) => {
 
     const res = await postResultConsult({ ...child, ...result });
     if (res) {
+      toast.success('Konsultasi berhasil disimpan');
       return router.push('/profile');
     }
+    toast.error('Konsultasi Gagal disimpan!');
   };
   return (
     <form
       className="flex flex-col gap-3 justify-center items-center"
       onSubmit={(e) => handleSave(e)}>
+      <Toaster />
       <p className="text-3xl font-semibold">
         Simpan Hasil Konsultasi
       </p>
