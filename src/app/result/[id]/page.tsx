@@ -1,5 +1,7 @@
+import Loading from '@/components/loading';
 import CourseDisplay from '@/components/resultItem/courseDisplay';
 import { revalidatePath } from 'next/cache';
+import { Suspense } from 'react';
 
 const RecommendationPage = ({
   params,
@@ -27,8 +29,9 @@ const RecommendationPage = ({
         Berikut adalah Rekomendasi Kursus untuk pengembangan bakat{' '}
         <span className="text-pink-600 font-bold">{talent}</span>
       </p>
-
-      <CourseDisplay id={params.id} />
+      <Suspense fallback={<Loading />}>
+        <CourseDisplay id={params.id} />
+      </Suspense>
     </div>
   );
 };

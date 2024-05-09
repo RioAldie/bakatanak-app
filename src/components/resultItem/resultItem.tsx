@@ -1,5 +1,4 @@
 'use client';
-import React, { Suspense } from 'react';
 import ResultDisplay from './resultDisplay';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
@@ -58,13 +57,11 @@ const ResultItem = async () => {
 
   return (
     <div className="md:w-[700px] w-[360px] h-[560px] p-14 z-30  backdrop-blur-md bg-white/30">
-      <Suspense fallback={<div>Loading...</div>}>
-        <ResultDisplay
-          talent={result?.talent}
-          prob={parseFloat(result?.prob)}
-          id={result?.code}
-        />
-      </Suspense>
+      <ResultDisplay
+        talent={result?.talent}
+        prob={parseFloat(result?.prob)}
+        id={result?.code}
+      />
     </div>
   );
 };

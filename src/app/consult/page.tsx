@@ -42,9 +42,9 @@ const ConsultPage = () => {
         Konsultasi <span className="text-pink-600">Minat Bakat</span>{' '}
       </p>
 
-      <div className="z-10 absolute top-56 left-80">
+      <div className="z-10 hidden absolute md:block top-56 left-80">
         <Image
-          src={'/images/ellipse.png'}
+          src={'/images/Ellipse.png'}
           alt="eclipse"
           width={157}
           height={113}
