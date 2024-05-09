@@ -44,7 +44,7 @@ const ConsultPage = () => {
 
       <div className="z-10 hidden absolute md:block top-56 left-80">
         <Image
-          src={'/images/Ellipse.png'}
+          src={'/images/ellipse2.png'}
           alt="eclipse"
           width={157}
           height={113}
