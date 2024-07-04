@@ -4,57 +4,30 @@ import Link from 'next/link';
 import Menu from './menu';
 import Logout from './logout';
 import AuthBox from './AuthBox';
+import Navlink from './navlink';
+import { Bars3Icon } from '@heroicons/react/24/solid';
+import BoxNavlink from './boxNavlink';
 
 const Navbar = async () => {
   const session = await getSession();
 
   return (
-    <div className="w-full  z-30 px-10  items-center flex justify-between flex-row bg-white top-0 sticky h-14 border-b-2 border-l-slate-400">
-      <Link href={'/'}>
-        <div>
+    <nav className=" top-0 w-full fixed z-30 bg-white border-b-2 border-gray-300">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <Link
+          href="/"
+          className="flex items-center space-x-3 rtl:space-x-reverse">
           <Image
             src={'/images/logo-bakatanak.png'}
             width={140}
             height={40}
             alt="logo-bakatanak"
           />
-        </div>
-      </Link>
-      <div>
-        <ul className="md:flex hidden flex-row justify-center gap-10 font-medium">
-          <li className="text-slate-700 hover:text-pink-600 ">
-            {' '}
-            <Link href="/"> About</Link>
-          </li>
-          <li className="text-slate-700 hover:text-pink-600">
-            {' '}
-            <Link href="/warning">Konsultasi</Link>
-          </li>
-          <li className="text-slate-700 hover:text-pink-600">
-            {' '}
-            <Link href="/course">Kursus</Link>
-          </li>
-          <li className="text-slate-700 hover:text-pink-600">
-            {' '}
-            <Link href="/profile">Riwayat</Link>
-          </li>
-        </ul>
-      </div>
+        </Link>
 
-      <div className="md:flex gap-4 hidden">
-        {session.isLoggedin ? <Logout /> : <AuthBox />}
+        <BoxNavlink isLoggedin={session.isLoggedin} />
       </div>
-
-      {/* <img
-          src="/icons/bars-solid.svg"
-          className={`cursor-pointer transition ${
-            isOpen ? 'rotate-180' : ''
-          }`}
-          onClick={() => setIsOpen(!isOpen)}
-          alt="dropdown"
-        /> */}
-      <Menu isLoggedin={session.isLoggedin} />
-    </div>
+    </nav>
   );
 };
 

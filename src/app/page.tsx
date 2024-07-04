@@ -12,9 +12,9 @@ export default function Home() {
             <span className="text-pink-600">Masa Depan!</span>{' '}
           </h1>
           <p className="font-normal text-base">
-            Tes minat bakat untuk mendapatkan minat bakat yang tepat
-            bagi anak, agar potensi bakat mereka dapat dikembangkan
-            dengan tepat.
+            Dengan menemukan minat dan bakat yang tepat, potensi anak
+            dapat terasah dengan optimal dan masa depan mereka akan
+            lebih cerah.
           </p>
           <Link
             href={'/warning'}

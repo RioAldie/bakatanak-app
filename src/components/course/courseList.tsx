@@ -4,10 +4,10 @@ import CourseItem from '../resultItem/courseItem';
 import { getRecomendationCourse } from '@/lib/course';
 
 type courseFormat = {
-  key: String;
-  _id: String;
-  name: String;
-  image: String;
+  key: string;
+  _id: string;
+  name: string;
+  image: string;
 };
 
 const CourseList = async () => {

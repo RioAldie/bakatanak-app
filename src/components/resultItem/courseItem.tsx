@@ -2,9 +2,9 @@ import Image from 'next/image';
 import React from 'react';
 
 interface CourseProps {
-  name: String;
-  image: String;
-  id: String;
+  name: string;
+  image: string;
+  id: string;
 }
 const CourseItem = (props: CourseProps) => {
   const { name, image, id } = props;
@@ -12,7 +12,7 @@ const CourseItem = (props: CourseProps) => {
     <div className="p-1 w-64 border border-gray-300 rounded-3xl">
       <Image
         src={`${image}`}
-        alt="img"
+        alt={name}
         width={250}
         height={250}
         className="w-64 h-44 rounded-3xl"

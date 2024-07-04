@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { deleteResult } from '@/lib/result';
+import { Dispatch, SetStateAction } from 'react';
 
 interface resultConsultProps {
   prob: number;
@@ -6,11 +8,18 @@ interface resultConsultProps {
   _id: string;
   date: Date;
   talent: string;
+  setIsChange: Dispatch<SetStateAction<boolean>>;
 }
 const ResultConsultItem = (props: resultConsultProps) => {
-  const { prob, name, _id, date, talent } = props;
+  const { prob, name, _id, date, talent, setIsChange } = props;
 
   const formattedPercentage = (prob * 100).toFixed(2) + '%';
+
+  const handleDelete = async () => {
+    await deleteResult(_id);
+
+    setIsChange((prev) => !prev);
+  };
   return (
     <div className="w-full   bg-white border border-gray-200 rounded-lg shadow ">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between p-3 gap-4">
@@ -36,11 +45,12 @@ const ResultConsultItem = (props: resultConsultProps) => {
               Lihat
             </div>
           </Link>
-          <a
-            href="#"
+          <button
+            onClick={() => handleDelete()}
+            type="submit"
             className="py-2 px-4 ms-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
             Hapus
-          </a>
+          </button>
         </div>
       </div>
     </div>

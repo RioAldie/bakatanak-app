@@ -131,7 +131,6 @@ const Question = (props: QuestionInterface) => {
     setSelectedValue(0);
     counter = counter + 1;
     setQuest();
-    console.log('Cf =>', no, ':', cfIndicator);
   };
   const handleFinish = () => {
     dispatch(set(cfIndicator));

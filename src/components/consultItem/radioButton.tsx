@@ -16,10 +16,10 @@ const RadioButtons = (props: QuestTypes) => {
     { value: 0.2, label: 'Kemungkinan Besar Tidak' },
     { value: 0.3, label: 'Mungkin Tidak' },
     { value: 0.4, label: 'Tidak Tahu' },
-    { value: 0.5, label: 'Mungkin' },
-    { value: 0.6, label: 'Kemungkinan Besar' },
-    { value: 0.8, label: 'Hampir Pasti' },
-    { value: 1, label: 'Sangat Pasti' },
+    { value: 0.5, label: 'Mungkin Iya' },
+    { value: 0.6, label: 'Kemungkinan Besar Iya' },
+    { value: 0.8, label: 'Hampir Pasti Iya' },
+    { value: 1, label: 'Sangat Pasti Iya' },
   ];
   const handleReset = () => {
     setValue(0);
@@ -33,27 +33,6 @@ const RadioButtons = (props: QuestTypes) => {
   }, [isCheked]);
 
   return (
-    // <RadioGroup value={selectedValue} onChange={setSelectedValue}>
-    //   <div className="space-y-2 mt-4">
-    //     {options.map((option) => (
-    //       <RadioGroup.Option key={option.value} value={option.value}>
-    //         {() => (
-    //           <div className="flex items-center">
-    //             <input
-    //               type="radio"
-    //               name="cf"
-    //               aria-checked={isCheked}
-    //               className="w-4 h-4 text-pink-600 bg-gray-100 border-gray-300 focus:ring-pink-500 dark:focus:ring-pink-600 accent-pink-600"
-    //             />
-    //             <p className="ms-2 text-sm font-medium text-gray-900">
-    //               {option.label}
-    //             </p>
-    //           </div>
-    //         )}
-    //       </RadioGroup.Option>
-    //     ))}
-    //   </div>
-    // </RadioGroup>
     <>
       {options.map((option, i) => {
         return (

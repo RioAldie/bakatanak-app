@@ -2,10 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/navbar/Navbar';
-import { ConsultProvider } from '@/context/result';
 import { Providers } from './provider';
-import store from '../redux/store';
-import { Provider } from 'react-redux';
 import Footer from '@/components/footer/footer';
 import { Suspense } from 'react';
 import Loading from '@/components/loading';
@@ -31,12 +28,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <meta
+        name="dicoding:email"
+        content="rioaldierwanto@gmail.com"></meta>
       <body className={poppins.className}>
         <Navbar />
-        <Suspense fallback={<Loading />}>
-          <Providers>{children}</Providers>
-        </Suspense>
-
+        <div className="min-h-[100vh] py-10">
+          <Suspense fallback={<Loading />}>
+            <Providers>{children}</Providers>
+          </Suspense>
+        </div>
         <Footer />
       </body>
     </html>
