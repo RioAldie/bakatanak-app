@@ -32,7 +32,7 @@ const ProfilePage = async () => {
         </div>
         <div className="tab:mt-4 items-center flex gap-3 tab:justify-center">
           <Link
-            href="/alltrack"
+            href="#"
             className=" sm:p-2 bg-white-100 hover:bg-white-300 rounded-lg text-sm flex w-24 h-10 flex-row items-center">
             <ArchiveBoxIcon className="size-6 text-pink-500" />
             <p className="font-medium text-pink-500">Riwayat</p>
@@ -40,7 +40,7 @@ const ProfilePage = async () => {
         </div>
       </div>
       <Suspense fallback={<Loading />}>
-        <ListResultConsult />
+        <ListResultConsult userId={session.userId} />
       </Suspense>
     </section>
   );

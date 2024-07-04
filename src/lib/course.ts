@@ -1,3 +1,5 @@
+import { redirect } from 'next/navigation';
+
 export const getRecomendationCourse = async () => {
   try {
     const response = await fetch(
@@ -14,7 +16,7 @@ export const getRecomendationCourse = async () => {
 
     return res.data;
   } catch (error) {
-    throw new Error('something is wrong!');
+    redirect('/404');
   }
 };
 export const getRecomendationCourseByTalent = async (id: string) => {

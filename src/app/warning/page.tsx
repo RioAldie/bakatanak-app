@@ -9,14 +9,6 @@ const WarningPage = () => {
         Konsultasi <span className="text-pink-600">Minat Bakat</span>{' '}
       </p>
 
-      <div className="z-10 absolute top-56 left-80">
-        <Image
-          src={'/images/ellipse2.png'}
-          alt="eclipse"
-          width={157}
-          height={113}
-        />
-      </div>
       <div className="absolute top-[420px] right-72">
         <Image
           src={'/icons/Titik-titik.svg'}
@@ -32,17 +24,26 @@ const WarningPage = () => {
           </p>
           <div className="flex-col justify-between items-start gap-6 max-h-[500px">
             <p className="text-base font-semibold text-black">
-              1. pilih ciri-ciri pada soal yang menurut anda sesuai
-              dengan anak anda
+              1. Pilih ciri-ciri pada soal yang paling menggambarkan
+              anak Anda.
             </p>
             <p className="text-base font-semibold text-black mt-5">
-              2. tidak ada jawaban yang benar maupun salah pada setiap
-              pertanyaan
+              2. Tidak ada jawaban benar atau salah pada setiap
+              pertanyaan.
             </p>
             <p className="text-base font-semibold text-black mt-5">
-              3. hasil konsultasi ini tidak mutlak benar, untuk
-              mendapatkan hasil yang lebih pasti bisa melakukan
-              konsultasi langsung dengan pakar
+              3. Hasil konsultasi ini tidak sepenuhnya akurat. Untuk
+              mendapatkan hasil yang lebih pasti, disarankan untuk
+              melakukan konsultasi langsung dengan pakar.
+            </p>
+            <p className="text-base font-semibold text-black mt-5">
+              4. Jika ragu pada sebuah pertanyaan, pilih jawaban yang
+              paling mendekati.
+            </p>
+            <p className="text-base font-semibold text-black mt-5">
+              5. Jika Anda memiliki pertanyaan atau membutuhkan
+              klarifikasi lebih lanjut, jangan ragu untuk menghubungi
+              kami.
             </p>
           </div>
 

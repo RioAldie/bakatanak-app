@@ -1,3 +1,5 @@
+'use server';
+
 export const postResultConsult = async (result: object) => {
   try {
     const res = await fetch(
@@ -11,15 +13,12 @@ export const postResultConsult = async (result: object) => {
       }
     );
 
-    if (!res.ok) {
-      throw new Error('something is wrong!');
+    if (res.status >= 300) {
       return false;
     }
-    const data = await res.json();
     return true;
   } catch (error) {
-    console.log(error);
-    throw new Error('something is wrong!');
+    return false;
   }
 };
 export const getResultByUser = async (userId: string) => {
@@ -61,6 +60,27 @@ export const getResultDetailByID = async (id: string) => {
 
     const result = await res.json();
     return result.data;
+  } catch (error) {
+    throw new Error('something is wrong!');
+  }
+};
+export const deleteResult = async (id: string) => {
+  try {
+    const res = await fetch(
+      'https://bakatanak-server.vercel.app/consult/',
+      {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ resultId: id }),
+      }
+    );
+    if (res.status === 200) {
+      return true;
+    }
+
+    return false;
   } catch (error) {
     throw new Error('something is wrong!');
   }

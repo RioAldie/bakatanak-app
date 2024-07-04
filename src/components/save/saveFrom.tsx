@@ -6,6 +6,7 @@ import { redirect, usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Toaster, toast } from 'sonner';
+import ButtonLoading from './buttonLoading';
 interface saveFromProps {
   userId?: string;
 }
@@ -17,8 +18,8 @@ const SaveFrom = (props: saveFromProps) => {
     city: '',
     userId: props.userId,
   });
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const router = useRouter();
-
   const result = useSelector(
     (state: RootState) => state.result.value
   );
@@ -42,15 +43,24 @@ const SaveFrom = (props: saveFromProps) => {
 
   const handleSave = async (e: any) => {
     e.preventDefault();
+    setIsLoading(true);
 
     const newRes = { ...child, ...result };
 
-    const res = await postResultConsult({ ...child, ...result });
-    if (res) {
+    const res = await postResultConsult({
+      ...child,
+      ...result,
+    }).finally(() => {
+      setIsLoading(false);
+    });
+
+    if (res === true) {
       toast.success('Konsultasi berhasil disimpan');
-      return router.push('/profile');
+      router.push('/profile');
     }
-    toast.error('Konsultasi Gagal disimpan!');
+    if (res === false) {
+      toast.error('Konsultasi Gagal disimpan!');
+    }
   };
   return (
     <form
@@ -105,9 +115,13 @@ const SaveFrom = (props: saveFromProps) => {
         onChange={(e) => handleChangeValue(e)}
         name="city"
       />
-      <button className="text-white mt-3  w-56 h-11 flex items-center justify-center bg-pink-600 transition-all duration-300 hover:text-white hover:bg-pink-800 border border-solid border-pink-700  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-2 text-center">
-        Simpan
-      </button>
+      {!isLoading ? (
+        <button className="text-white mt-3  w-56 h-11 flex items-center justify-center bg-pink-600 transition-all duration-300 hover:text-white hover:bg-pink-800 border border-solid border-pink-700  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-2 text-center">
+          Simpan
+        </button>
+      ) : (
+        <ButtonLoading />
+      )}
     </form>
   );
 };

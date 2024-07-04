@@ -3,10 +3,10 @@ import CourseItem from './courseItem';
 import { getRecomendationCourseByTalent } from '@/lib/course';
 
 type courseFormat = {
-  key: String;
-  _id: String;
-  name: String;
-  image: String;
+  key: string;
+  _id: string;
+  name: string;
+  image: string;
 };
 type idProps = {
   id: string;
