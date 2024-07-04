@@ -49,6 +49,7 @@ const ResultConsultPage = async ({
             talent={result?.talent}
             prob={parseFloat(result?.prob)}
             id={code}
+            allResult={result?.allResult}
           />
         </Suspense>
       </div>

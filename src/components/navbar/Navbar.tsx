@@ -12,7 +12,7 @@ const Navbar = async () => {
   const session = await getSession();
 
   return (
-    <nav className=" top-0 w-full fixed z-30 bg-white border-b-2 border-gray-300">
+    <nav className=" top-0 w-full fixed z-50 bg-white border-b-2 border-gray-300">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link
           href="/"
