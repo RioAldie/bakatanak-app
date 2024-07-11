@@ -6,7 +6,7 @@ import { Suspense } from 'react';
 const LoginPage = () => {
   return (
     <div className="w-full min-h-screen flex justify-center items-center">
-      <div className="w-96 h-96 ">
+      <div className="w-96 h-96 md:p-0 p-10">
         <Suspense fallback={<Loading />}>
           <LoginForm />
         </Suspense>

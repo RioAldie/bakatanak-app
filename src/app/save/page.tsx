@@ -11,7 +11,7 @@ const SavePage = async () => {
 
   return (
     <div className="w-full min-h-screen flex items-center flex-col mt-28">
-      <div className="w-96 h-96 ">
+      <div className="w-96 h-96 md:p-0 p-10">
         <SaveFrom userId={session?.userId} />
       </div>
     </div>

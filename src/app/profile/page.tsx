@@ -19,7 +19,7 @@ const ProfilePage = async () => {
   }
 
   return (
-    <section className="pt-24 px-[6.25%] text-navy h-fit transition-all mb-20 sm:mb-12">
+    <section className="pt-24 px-[6.25%] text-navy h-fit transition-all mb-20 sm:mb-20">
       <div className="border p-4 rounded-lg mt-2 flex justify-between tab:flex-col">
         <div className="flex items-center">
           <UserCircleIcon className="size-9 text-pink-500" />
