@@ -5,7 +5,7 @@ import StepBox from '@/components/steps/stepBox';
 export default function Home() {
   return (
     <main className="flex flex-col">
-      <div className="flex min-h-screen h-max md:flex-row flex-col items-center md:justify-between justify-center md:px-40 px-2 gap-11 ">
+      <div className="flex min-h-screen h-max md:flex-row flex-col items-center md:justify-around justify-center md:px-40 px-2 gap-11 mt-10 ">
         <div className="w-[360px] flex flex-col md:justify-start justify-center md:items-start items-center gap-5 md:text-left text-center">
           <h1 className="font-bold md:text-5xl text-3xl text-black text-poppins">
             Temukan Minat dan Bakat, Untuk{' '}

@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 function Footer() {
   return (
-    <footer className="w-full flex flex-col bg-navy justify-between  items-center bg-pink-950 mt-14 ">
+    <footer className="w-full flex flex-col bg-navy justify-between  items-center bg-pink-950 mt-28 ">
       <div className="flex h-full w-full flex-wrap md:flex-col flex-row items-center justify-between py-[5rem] md:py-12 px-[6.25%]">
         <Image
           src="/images/logo-bakatanak-light.png"
