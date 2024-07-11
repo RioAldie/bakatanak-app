@@ -65,7 +65,7 @@ const SaveFrom = (props: saveFromProps) => {
       className="flex flex-col gap-3 justify-center items-center"
       onSubmit={(e) => handleSave(e)}>
       <Toaster />
-      <p className="text-3xl font-semibold">
+      <p className="text-3xl text-center font-semibold">
         Simpan Hasil Konsultasi
       </p>
       <label htmlFor="name" className="text-slate-500 w-full">
