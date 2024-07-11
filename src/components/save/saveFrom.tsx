@@ -45,8 +45,6 @@ const SaveFrom = (props: saveFromProps) => {
     e.preventDefault();
     setIsLoading(true);
 
-    const newRes = { ...child, ...result };
-
     const res = await postResultConsult({
       ...child,
       ...result,

@@ -33,7 +33,7 @@ const ProfilePage = async () => {
         <div className="tab:mt-4 items-center flex gap-3 tab:justify-center">
           <Link
             href="#"
-            className=" sm:p-2 bg-white-100 hover:bg-white-300 rounded-lg text-sm flex w-24 h-10 flex-row items-center">
+            className=" sm:p-2 bg-white-100 hidden md:flex hover:bg-white-300 rounded-lg text-sm  w-24 h-10 flex-row items-center">
             <ArchiveBoxIcon className="size-6 text-pink-500" />
             <p className="font-medium text-pink-500">Riwayat</p>
           </Link>

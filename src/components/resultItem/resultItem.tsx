@@ -61,6 +61,7 @@ const ResultItem = async () => {
         talent={result?.talent}
         prob={parseFloat(result?.prob)}
         id={result?.code}
+        allResult={result?.allResult}
       />
     </div>
   );

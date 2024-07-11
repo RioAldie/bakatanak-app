@@ -120,6 +120,7 @@ const Question = (props: QuestionInterface) => {
     setCfIndicator(prevObj);
 
     if (code === 'C20') {
+      console.log('cf', cfIndicator);
       return handleFinish();
     }
 
