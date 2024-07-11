@@ -54,7 +54,9 @@ const BoxNavlink = (props: menuProps) => {
           />
 
           {!isLoggedin ? (
-            <li className="bg-pink-600 hover:bg-pink-800 text-white py-2 px-5 rounded-md cursor-pointer">
+            <li
+              className="bg-pink-600 hover:bg-pink-800 text-white py-2 px-5 rounded-md cursor-pointer"
+              onClick={() => setActive(false)}>
               <Link
                 href="/login"
                 className=" w-full flex items-center">
